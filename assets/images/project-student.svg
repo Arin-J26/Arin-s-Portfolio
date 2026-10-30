@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <rect width="600" height="380" fill="#29231D"/>
+  
+  <!-- Retro Terminal Monitor Screen -->
+  <rect x="25" y="25" width="550" height="330" rx="10" fill="#1C1815" stroke="#68734A" stroke-width="3"/>
+  <rect x="35" y="35" width="530" height="310" rx="6" fill="#152013"/>
+
+  <!-- CRT Scanlines simulation -->
+  <line x1="35" y1="55" x2="565" y2="55" stroke="#68734A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="35" y1="75" x2="565" y2="75" stroke="#68734A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="35" y1="95" x2="565" y2="95" stroke="#68734A" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Terminal Prompt -->
+  <text x="55" y="70" font-family="'Courier New', monospace" font-size="14" fill="#68734A" font-weight="bold">> python3 student_sys.py --init-db</text>
+  <text x="55" y="95" font-family="'Courier New', monospace" font-size="13" fill="#D9B65D">[SYSTEM] Student Management Database v2.1 Connected.</text>
+  <text x="55" y="115" font-family="'Courier New', monospace" font-size="13" fill="#E7D9BD">===================================================</text>
+  <text x="55" y="135" font-family="'Courier New', monospace" font-size="12" fill="#E7D9BD">ID    | NAME            | COURSE | SEM | STATUS</text>
+  <text x="55" y="150" font-family="'Courier New', monospace" font-size="12" fill="#68734A">---------------------------------------------------</text>
+  <text x="55" y="170" font-family="'Courier New', monospace" font-size="12" fill="#F4EBD8">101   | Aarav Sharma    | B.Tech | 1st | ENROLLED</text>
+  <text x="55" y="190" font-family="'Courier New', monospace" font-size="12" fill="#F4EBD8">102   | Priya Verma     | B.Tech | 1st | ENROLLED</text>
+  <text x="55" y="210" font-family="'Courier New', monospace" font-size="12" fill="#F4EBD8">103   | Arin Jain       | B.Tech | 1st | ACTIVE-DEV</text>
+  <text x="55" y="230" font-family="'Courier New', monospace" font-size="12" fill="#F4EBD8">104   | Rohan Gupta     | B.Tech | 1st | ENROLLED</text>
+  <text x="55" y="255" font-family="'Courier New', monospace" font-size="12" fill="#68734A">---------------------------------------------------</text>
+  <text x="55" y="280" font-family="'Courier New', monospace" font-size="13" fill="#D9B65D">> Select Operation: [1] Add [2] Search [3] Report</text>
+  <text x="55" y="305" font-family="'Courier New', monospace" font-size="14" fill="#C65D32" font-weight="bold">> Ready for input_ █</text>
+
+  <!-- Retro Badge overlay -->
+  <g transform="translate(430, 240) rotate(-6)">
+    <rect x="0" y="0" width="115" height="50" fill="#C65D32" stroke="#F4EBD8" stroke-width="2"/>
+    <text x="57" y="22" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#F4EBD8" text-anchor="middle">PYTHON / CLI</text>
+    <text x="57" y="38" font-family="'Courier New', monospace" font-size="12" font-weight="900" fill="#F4EBD8" text-anchor="middle">MODULAR ARCH</text>
+  </g>
+</svg>

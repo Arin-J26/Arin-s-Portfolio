@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="100%" height="100%">
+  <defs>
+    <filter id="vintage-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.14  0 0 0 0 0.11  0 0 0 0.25 0" />
+      <feComposite in2="SourceGraphic" in="glitch" operator="in" />
+    </filter>
+    <linearGradient id="sepiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7D9BD"/>
+      <stop offset="50%" stop-color="#D9C29E"/>
+      <stop offset="100%" stop-color="#C5A87F"/>
+    </linearGradient>
+    <pattern id="dotPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#29231D" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Paper -->
+  <rect width="500" height="600" fill="url(#sepiaGrad)"/>
+  <rect width="500" height="600" fill="url(#dotPattern)"/>
+
+  <!-- Vintage Photo Frame / Passport style -->
+  <rect x="25" y="25" width="450" height="550" fill="none" stroke="#29231D" stroke-width="2" stroke-dasharray="8,4"/>
+  <rect x="35" y="35" width="430" height="530" fill="none" stroke="#29231D" stroke-width="1"/>
+
+  <!-- Corner photo mounts -->
+  <polygon points="25,25 65,25 25,65" fill="#29231D"/>
+  <polygon points="475,25 435,25 475,65" fill="#29231D"/>
+  <polygon points="25,575 65,575 25,535" fill="#29231D"/>
+  <polygon points="475,575 435,575 475,535" fill="#29231D"/>
+
+  <!-- Developer Silhouette / Vintage Portrait Art -->
+  <g transform="translate(130, 80)">
+    <!-- Aura circle -->
+    <circle cx="120" cy="130" r="115" fill="#F4EBD8" stroke="#29231D" stroke-width="2"/>
+    <circle cx="120" cy="130" r="105" fill="none" stroke="#C65D32" stroke-width="1.5" stroke-dasharray="5,5"/>
+    
+    <!-- Torso -->
+    <path d="M 40,240 Q 120,200 200,240 L 220,280 L 20,280 Z" fill="#29231D"/>
+    <!-- Collar & tie / sweater -->
+    <polygon points="120,225 100,205 140,205" fill="#F4EBD8"/>
+    <polygon points="120,245 110,225 130,225" fill="#C65D32"/>
+    <!-- Neck -->
+    <rect x="105" y="170" width="30" height="40" fill="#E7D9BD" stroke="#29231D" stroke-width="2"/>
+    <!-- Head -->
+    <ellipse cx="120" cy="130" rx="48" ry="55" fill="#E7D9BD" stroke="#29231D" stroke-width="2.5"/>
+    <!-- Hair -->
+    <path d="M 68,125 Q 75,70 120,68 Q 165,70 172,125 Q 155,90 120,88 Q 85,90 68,125 Z" fill="#29231D"/>
+    <!-- Glasses -->
+    <circle cx="102" cy="125" r="16" fill="#F4EBD8" stroke="#29231D" stroke-width="2.5"/>
+    <circle cx="138" cy="125" r="16" fill="#F4EBD8" stroke="#29231D" stroke-width="2.5"/>
+    <line x1="118" y1="125" x2="122" y2="125" stroke="#29231D" stroke-width="2.5"/>
+    <path d="M 86,123 L 74,120" stroke="#29231D" stroke-width="2"/>
+    <path d="M 154,123 L 166,120" stroke="#29231D" stroke-width="2"/>
+    <!-- Friendly Smile -->
+    <path d="M 110,155 Q 120,165 130,155" fill="none" stroke="#29231D" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Vintage Stamp on Portrait -->
+  <g transform="translate(340, 360) rotate(-14)">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#C65D32" stroke-width="2.5" stroke-dasharray="6,3"/>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="#C65D32" stroke-width="1"/>
+    <text x="50" y="38" font-family="'Courier New', monospace" font-size="9" font-weight="bold" fill="#C65D32" text-anchor="middle" letter-spacing="1">DEPT OF CS</text>
+    <text x="50" y="53" font-family="'Courier New', monospace" font-size="12" font-weight="900" fill="#C65D32" text-anchor="middle">VERIFIED</text>
+    <text x="50" y="66" font-family="'Courier New', monospace" font-size="8" fill="#C65D32" text-anchor="middle">2024-2028</text>
+  </g>
+
+  <!-- Identification Label -->
+  <g transform="translate(50, 430)">
+    <rect x="0" y="0" width="400" height="110" fill="#F4EBD8" stroke="#29231D" stroke-width="2"/>
+    <line x1="0" y1="35" x2="400" y2="35" stroke="#29231D" stroke-width="1.5"/>
+    
+    <text x="15" y="24" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#29231D" letter-spacing="2">CANDIDATE DOSSIER</text>
+    <text x="385" y="24" font-family="'Courier New', monospace" font-size="12" fill="#68734A" text-anchor="end">BATCH 2024–28</text>
+
+    <text x="15" y="60" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#29231D">NAME:</text>
+    <text x="80" y="60" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#C65D32">ARIN JAIN</text>
+
+    <text x="15" y="82" font-family="'Courier New', monospace" font-size="11" fill="#5A4E43">ROLE: CS UNDERGRAD / ASPIRING DEVELOPER</text>
+    <text x="15" y="100" font-family="'Courier New', monospace" font-size="11" fill="#5A4E43">INST: RISHIHOOD UNIVERSITY • INDIA</text>
+
+    <!-- Fingerprint / Seal graphic -->
+    <path d="M 340,55 C 335,65 338,85 350,95 M 346,50 C 352,65 350,85 362,95 M 356,48 C 365,65 362,85 372,92" fill="none" stroke="#29231D" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

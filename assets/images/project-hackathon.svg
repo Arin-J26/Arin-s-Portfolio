@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <rect width="600" height="380" fill="#E7D9BD"/>
+  <rect x="25" y="25" width="550" height="330" fill="#F4EBD8" stroke="#29231D" stroke-width="2.5"/>
+  
+  <!-- Banner tape -->
+  <polygon points="40,25 220,25 200,65 20,65" fill="#D9B65D" stroke="#29231D" stroke-width="1.5"/>
+  <text x="110" y="50" font-family="'Courier New', monospace" font-size="12" font-weight="900" fill="#29231D" text-anchor="middle">HACKATHON SPRINT 36H</text>
+
+  <!-- Prototype Blueprint grid -->
+  <g transform="translate(45, 80)">
+    <!-- Circuit & Flowchart nodes -->
+    <rect x="20" y="20" width="130" height="70" rx="4" fill="#68734A" stroke="#29231D" stroke-width="2"/>
+    <text x="85" y="48" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#F4EBD8" text-anchor="middle">CLIENT APP</text>
+    <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#E7D9BD" text-anchor="middle">Vanilla JS &amp; UI</text>
+
+    <!-- Connector lines -->
+    <line x1="150" y1="55" x2="220" y2="55" stroke="#29231D" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <polygon points="220,55 210,50 210,60" fill="#29231D"/>
+
+    <rect x="220" y="20" width="140" height="70" rx="4" fill="#C65D32" stroke="#29231D" stroke-width="2"/>
+    <text x="290" y="48" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#F4EBD8" text-anchor="middle">REST / API ENGINE</text>
+    <text x="290" y="68" font-family="'Courier New', monospace" font-size="9" fill="#F4EBD8" text-anchor="middle">Fast Response</text>
+
+    <line x1="360" y1="55" x2="430" y2="55" stroke="#29231D" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <polygon points="430,55 420,50 420,60" fill="#29231D"/>
+
+    <rect x="430" y="20" width="70" height="70" rx="4" fill="#29231D" stroke="#29231D" stroke-width="2"/>
+    <text x="465" y="55" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#D9B65D" text-anchor="middle">DB</text>
+  </g>
+
+  <!-- Sticky Note -->
+  <g transform="translate(60, 200) rotate(-2)">
+    <rect x="0" y="0" width="220" height="110" fill="#FAF3B0" stroke="#29231D" stroke-width="1.5"/>
+    <rect x="80" y="-8" width="60" height="16" fill="rgba(217, 182, 93, 0.7)"/>
+    <text x="15" y="28" font-family="Georgia, serif" font-size="13" font-weight="bold" fill="#29231D">Sprint Pitch Deck</text>
+    <text x="15" y="52" font-family="'Courier New', monospace" font-size="10" fill="#5A4E43">&#10003; Real-time peer sync</text>
+    <text x="15" y="70" font-family="'Courier New', monospace" font-size="10" fill="#5A4E43">&#10003; Offline-first caching</text>
+    <text x="15" y="88" font-family="'Courier New', monospace" font-size="10" fill="#C65D32">&#9733; 3-Min Demo Video Built</text>
+  </g>
+
+  <!-- Team Collaboration Badge -->
+  <g transform="translate(320, 205)">
+    <rect x="0" y="0" width="220" height="105" fill="#E7D9BD" stroke="#29231D" stroke-width="2"/>
+    <text x="20" y="30" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#29231D">COLLABORATION LOG</text>
+    <text x="20" y="52" font-family="'Courier New', monospace" font-size="10" fill="#5A4E43">ROLE: Frontend &amp; Architecture</text>
+    <text x="20" y="70" font-family="'Courier New', monospace" font-size="10" fill="#68734A">STATUS: Prototype Shipped</text>
+    <text x="20" y="88" font-family="'Courier New', monospace" font-size="10" fill="#29231D">COMMITS: 42 across 3 branches</text>
+  </g>
+</svg>

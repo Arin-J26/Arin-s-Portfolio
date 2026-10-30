@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arin Jain — Personal Developer Portfolio | Digital Magazine &amp; Vintage Scrapbook</title>
+  <meta name="description" content="Personal developer portfolio of Arin Jain, a first-year Computer Science student at Rishihood University. An experimental vintage editorial scrapbook showcasing skills, projects, and learning journey." />
+  <meta name="author" content="Arin Jain" />
+
+  <!-- Google Fonts: Editorial Serifs, Retro Monospace & Expressive Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons for clean, crisp vector symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="vintage-theme">
+  <!-- Custom Desktop Cursor -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Noise / Grain Texture Overlay -->
+  <div class="paper-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Vintage Loading Screen -->
+  <div id="vintageLoader" class="vintage-loader">
+    <div class="loader-inner">
+      <div class="loader-stamp">
+        <span class="stamp-stars">★ ★ ★</span>
+        <span class="stamp-title">PRINTING PRESS</span>
+        <span class="stamp-sub">EST. 2024 • VOL. 1</span>
+      </div>
+      <div class="loader-headline">INITIALIZING THE ARIN JAIN GAZETTE</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-progress-bar" id="loaderBar"></div>
+      </div>
+      <div class="loader-status" id="loaderStatus">Loading ink cartridges &amp; typesets...</div>
+    </div>
+  </div>
+
+  <!-- Newspaper Masthead Bar (Top Banner) -->
+  <header class="masthead-topbar">
+    <div class="container masthead-inner">
+      <div class="masthead-meta-left">
+        <span class="edition-tag"><i class="fa-solid fa-newspaper"></i> DEVELOPER EDITION</span>
+        <span class="divider-dot">•</span>
+        <span class="meta-date">AUTUMN / WINTER 2024–2028</span>
+        <span class="divider-dot">•</span>
+        <span class="meta-place"><i class="fa-solid fa-location-dot"></i> INDIA</span>
+      </div>
+      <div class="masthead-meta-right">
+        <span class="meta-status"><span class="pulse-dot"></span> AVAILABLE FOR COLLABORATION</span>
+        <button id="soundToggle" class="sound-toggle-btn" aria-label="Toggle retro paper sounds">
+          <i class="fa-solid fa-volume-high"></i> <span class="sound-text">SFX: ON</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Newspaper Category Navigation -->
+  <nav class="category-nav-bar" id="mainNav">
+    <div class="container nav-content-wrap">
+      <div class="nav-branding">
+        <a href="#home" class="logo-text">
+          <span class="logo-initials">AJ</span>
+          <span class="logo-full">ARIN JAIN<span class="logo-dot">.</span>DEV</span>
+        </a>
+      </div>
+
+      <!-- Prominent Category Menu Buttons (Required Item 3) -->
+      <div class="category-menu" id="categoryMenu">
+        <a href="#home" class="category-btn active" data-category="01"><span class="btn-num">01</span> HOME</a>
+        <a href="#about" class="category-btn" data-category="02"><span class="btn-num">02</span> ABOUT</a>
+        <a href="#skills" class="category-btn" data-category="03"><span class="btn-num">03</span> SKILLS</a>
+        <a href="#projects" class="category-btn" data-category="04"><span class="btn-num">04</span> PROJECTS</a>
+        <a href="#achievements" class="category-btn" data-category="05"><span class="btn-num">05</span> ACHIEVEMENTS</a>
+        <a href="#experience" class="category-btn" data-category="06"><span class="btn-num">06</span> EXPERIENCE</a>
+        <a href="#learning" class="category-btn" data-category="07"><span class="btn-num">07</span> LEARNING</a>
+        <a href="#opensource" class="category-btn" data-category="08"><span class="btn-num">08</span> OPEN SOURCE</a>
+        <a href="#contact" class="category-btn" data-category="09"><span class="btn-num">09</span> CONTACT</a>
+      </div>
+
+      <!-- Floating / Mobile Menu Toggle Button -->
+      <button class="nav-mobile-toggle" id="menuToggle" aria-label="Toggle category menu" aria-expanded="false">
+        <span class="toggle-icon-bar"></span>
+        <span class="toggle-icon-bar"></span>
+        <span class="toggle-icon-bar"></span>
+        <span class="toggle-label">INDEX</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Floating Quick Nav Button (Visible when scrolled) -->
+  <button id="floatingMenuBtn" class="floating-index-btn" aria-label="Quick Category Index" title="Open Navigation Index">
+    <span class="float-stamp"><i class="fa-solid fa-bars-staggered"></i></span>
+    <span class="float-text">MENU [01-09]</span>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Return to top of page" title="Top of Page">
+    <i class="fa-solid fa-arrow-up"></i>
+    <span class="top-tag">TOP</span>
+  </button>
+
+  <!-- Main Document Container -->
+  <main id="mainContent">
+
+    <!-- ========================================================
+         SECTION 01: HERO SECTION
+         ======================================================== -->
+    <section id="home" class="hero-section section-padding">
+      <div class="container">
+        <!-- Newspaper Header Wire -->
+        <div class="newspaper-deck-header">
+          <div class="deck-col">LATEST DISPATCH</div>
+          <div class="deck-col center">THE COMPUTER SCIENCE CHRONICLES</div>
+          <div class="deck-col right">VOL. 01 • ISSUE 2024/25</div>
+        </div>
+
+        <div class="hero-grid">
+          <!-- Left Column: Editorial Headline & Intro -->
+          <div class="hero-text-block">
+            <div class="badge-post-it">
+              <span class="pin">&#128204;</span>
+              <span class="badge-txt">FIRST-YEAR CS STUDENT // 2024</span>
+            </div>
+
+            <!-- Main Heading (Required Item 4) -->
+            <h1 class="hero-main-title">
+              <span class="sub-greeting">HELLO, WORLD!</span>
+              <span class="title-name">I'm Arin Jain<span class="accent-period">.</span></span>
+            </h1>
+
+            <!-- Subtitle (Required Item 4) -->
+            <p class="hero-subtitle">
+              Computer Science Student <span class="sub-divider">/</span> Aspiring Software Developer
+            </p>
+
+            <!-- Decorative Tape -->
+            <div class="washi-tape-strip"></div>
+
+            <!-- Intro Bio (Required Item 4) -->
+            <p class="hero-intro-text">
+              I'm a first-year Computer Science student passionate about software development, problem-solving and open-source technologies. I enjoy exploring new technologies, building projects and learning through hands-on experiences.
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span class="btn-icon"><i class="fa-solid fa-compass"></i></span>
+                <span class="btn-label">EXPLORE MY WORK</span>
+                <span class="btn-arrow">&rarr;</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                <span class="btn-label">LET'S CONNECT</span>
+              </a>
+            </div>
+
+            <!-- Social Links & Metadata -->
+            <div class="hero-social-strip">
+              <div class="social-icons">
+                <a href="https://github.com/arinjain" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                  <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/arin-jain" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+                <a href="mailto:arinjain.contact@example.com" class="social-link" title="Email Arin">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span class="sr-only">Email</span>
+                </a>
+              </div>
+              <div class="location-badge">
+                <span class="flag-icon"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="loc-label">India</span>
+                <span class="loc-coords">[28.6139° N, 77.2090° E]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Vintage ID Card & Rotating Decorative Stamp -->
+          <div class="hero-visual-block">
+            <!-- Vintage Rotating Stamp (Required Item 4) -->
+            <div class="rotating-stamp-container" title="Continuous Evolution">
+              <div class="rotating-stamp-inner">
+                <svg viewBox="0 0 200 200" class="circular-text-svg">
+                  <path id="stampTextPath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
+                  <text font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="800" fill="#C65D32" letter-spacing="3.2">
+                    <textPath href="#stampTextPath" startOffset="0%">
+                      • BUILD • LEARN • REPEAT • CODE • EXPERIMENT
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="stamp-center-icon">
+                  <i class="fa-solid fa-terminal"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vintage ID-Card-Style Profile Panel (Required Item 4) -->
+            <div class="vintage-id-card">
+              <!-- ID Card Top Lanyard Slot -->
+              <div class="lanyard-slot"></div>
+              
+              <div class="id-header">
+                <div class="id-institution">
+                  <span class="inst-name">RISHIHOOD UNIVERSITY</span>
+                  <span class="inst-dept">DEPARTMENT OF COMPUTER SCIENCE</span>
+                </div>
+                <div class="id-seal">
+                  <span>CS•24</span>
+                </div>
+              </div>
+
+              <!-- Profile Picture Placeholder & Frame -->
+              <div class="id-photo-area">
+                <div class="photo-frame">
+                  <div class="corner-mount top-left"></div>
+                  <div class="corner-mount top-right"></div>
+                  <div class="corner-mount bottom-left"></div>
+                  <div class="corner-mount bottom-right"></div>
+                  
+                  <img src="https://images.unsplash.com/photo-1534972195531-a756b1126f24?w=600&auto=format&fit=crop&q=80" 
+                       alt="Arin Jain Developer Portrait" 
+                       class="profile-img" 
+                       id="profileImg"
+                       onerror="this.onerror=null; this.src='assets/images/profile-placeholder.svg';" />
+                  
+                  <div class="photo-overlay-stamp">
+                    <span>ACCREDITED</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ID Details Block -->
+              <div class="id-info-grid">
+                <div class="id-field">
+                  <span class="id-label">STUDENT NAME</span>
+                  <span class="id-val highlight">ARIN JAIN</span>
+                </div>
+                <div class="id-field">
+                  <span class="id-label">PROGRAM</span>
+                  <span class="id-val">B.Tech Computer Science</span>
+                </div>
+                <div class="id-field">
+                  <span class="id-label">COHORT / YEAR</span>
+                  <span class="id-val">1st Year (2024–2028)</span>
+                </div>
+                <div class="id-field">
+                  <span class="id-label">STATUS</span>
+                  <span class="id-val status-active"><span class="dot"></span> ACTIVE CODER</span>
+                </div>
+              </div>
+
+              <!-- Barcode & Fingerprint Simulation -->
+              <div class="id-card-footer">
+                <div class="barcode-lines" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="id-card-num">CARD ID: AJ-CS-0042-IND</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling Marquee Ticker (Required Item 4) -->
+      <div class="scrolling-ticker-wrap">
+        <div class="scrolling-ticker-track" id="tickerTrack">
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> COMPUTER SCIENCE STUDENT</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> OPEN SOURCE ENTHUSIAST</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> PYTHON &amp; C PROGRAMMING</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> FULL-STACK WEB DEVELOPMENT</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> PROBLEM SOLVER &amp; ALGO BUILDER</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> RISHIHOOD UNIVERSITY</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> LEARNING BY DOING</div>
+          <!-- Repeat for smooth loop -->
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> COMPUTER SCIENCE STUDENT</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> OPEN SOURCE ENTHUSIAST</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> PYTHON &amp; C PROGRAMMING</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> FULL-STACK WEB DEVELOPMENT</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> PROBLEM SOLVER &amp; ALGO BUILDER</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> RISHIHOOD UNIVERSITY</div>
+          <div class="ticker-item"><span class="ticker-symbol">&#10022;</span> LEARNING BY DOING</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Torn Paper Edge Divider -->
+    <div class="torn-paper-edge" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         SECTION 02: ABOUT ME
+         ======================================================== -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <!-- Section Header Editorial Style -->
+        <div class="section-meta-header">
+          <span class="sec-index">[02]</span>
+          <span class="sec-category">EDITORIAL ESSAY &amp; DOSSIER</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">PAGE NO. 04</span>
+        </div>
+
+        <h2 class="editorial-heading">
+          <span class="script-subtitle">Curiosity, Code &amp; Craft</span>
+          THE PERSON BEHIND THE CODE
+        </h2>
+
+        <!-- Magazine 3-Column Editorial Spread -->
+        <div class="editorial-spread">
+          <!-- Column 1: Main Editorial Text with Drop Cap -->
+          <div class="editorial-col col-main">
+            <p class="lead-paragraph">
+              <span class="drop-cap">I</span>'m a first-year Computer Science student at <strong>Rishihood University</strong>, driven by curiosity and a passion for technology, software development and problem-solving.
+            </p>
+            <p>
+              I enjoy exploring new technologies, experimenting with ideas and building projects that turn concepts into practical solutions.
+            </p>
+            <p>
+              I'm particularly interested in open-source development, full-stack web development and collaborative learning.
+            </p>
+
+            <!-- Pull Quote Box -->
+            <blockquote class="editorial-pull-quote">
+              <span class="quote-mark">&ldquo;</span>
+              <p>I believe in learning by doing, embracing challenges and continuously improving my skills.</p>
+              <cite>&mdash; Arin Jain, Developer Notebook</cite>
+            </blockquote>
+
+            <p>
+              Through hackathons, technical communities and personal projects, I aim to gain real-world experience, connect with like-minded individuals and contribute to meaningful projects.
+            </p>
+            <p>
+              I'm always eager to explore new opportunities, share knowledge and grow as a developer while creating something impactful.
+            </p>
+          </div>
+
+          <!-- Column 2: Polaroid Scrapbook & Annotations -->
+          <div class="editorial-col col-scrapbook">
+            <!-- Polaroid 1: Workspace / Code -->
+            <div class="polaroid-card rotate-neg">
+              <div class="tape-strip top-center"></div>
+              <div class="polaroid-photo">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80" 
+                     alt="Coding setup and notes" 
+                     onerror="this.onerror=null; this.src='assets/images/project-portfolio.svg';" />
+              </div>
+              <div class="polaroid-caption">
+                <span class="handwritten">late-night debugging session &amp; coffee</span>
+              </div>
+            </div>
+
+            <!-- Hand-drawn Annotation Note -->
+            <div class="annotation-note">
+              <div class="note-pin">&#128204;</div>
+              <h4 class="note-title">Core Principles</h4>
+              <ul class="note-list">
+                <li><i class="fa-solid fa-check"></i> Write clean, self-documenting code</li>
+                <li><i class="fa-solid fa-check"></i> Embrace the terminal as a canvas</li>
+                <li><i class="fa-solid fa-check"></i> Learn openly in public communities</li>
+                <li><i class="fa-solid fa-check"></i> Never be afraid to break things to learn</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 3: Quick Facts & Marginalia -->
+          <div class="editorial-col col-marginalia">
+            <div class="marginalia-card">
+              <div class="marginalia-header">
+                <span class="badge-mini">BIO DATA</span>
+                <span class="doc-code">REF: RU-CS-2024</span>
+              </div>
+
+              <div class="fact-row">
+                <span class="fact-label"><i class="fa-solid fa-graduation-cap"></i> Institution</span>
+                <span class="fact-value">Rishihood University</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label"><i class="fa-solid fa-laptop-code"></i> Major</span>
+                <span class="fact-value">B.Tech in Computer Science</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label"><i class="fa-solid fa-calendar"></i> Current Stage</span>
+                <span class="fact-value">1st Year Undergrad</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label"><i class="fa-solid fa-brain"></i> Focus Areas</span>
+                <span class="fact-value">Full-Stack &amp; Open Source</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-label"><i class="fa-solid fa-globe"></i> Base Location</span>
+                <span class="fact-value">India</span>
+              </div>
+
+              <!-- Postal Stamp -->
+              <div class="postal-stamp-wrap">
+                <div class="postal-stamp">
+                  <div class="stamp-dashed">
+                    <span class="stamp-flag">IND</span>
+                    <span class="stamp-price">2024</span>
+                    <span class="stamp-word">CURIOUS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Handwritten Postscript -->
+              <div class="postscript-note">
+                <span class="handwritten-alt">"Always up for discussing open-source, architecture, or trading charts!"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="dotted-divider-line"></div>
+
+    <!-- ========================================================
+         SECTION 03: SKILLS & TECHNOLOGIES
+         ======================================================== -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[03]</span>
+          <span class="sec-category">TECHNICAL INVENTORY &amp; WORKSHOP</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">CATALOG NO. 88</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">SKILLS &amp; TECHNOLOGIES</h2>
+          <p class="section-subtitle">
+            A vintage pegboard inventory of tools, languages and paradigms I practice. Transparent, realistic, and free of arbitrary percentage bars.
+          </p>
+        </div>
+
+        <!-- Vintage Skill Board Grid -->
+        <div class="skill-board-grid">
+          
+          <!-- Category 1: PROGRAMMING -->
+          <div class="skill-card-vintage">
+            <div class="card-rivet top-left"></div>
+            <div class="card-rivet top-right"></div>
+            <div class="card-category-strip">
+              <span class="cat-tag">CAT. 01</span>
+              <h3 class="cat-title"><i class="fa-solid fa-code"></i> PROGRAMMING</h3>
+            </div>
+            <p class="cat-desc">Foundational algorithmic languages studied in academic and personal exploration.</p>
+            
+            <div class="skill-items-list">
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-python"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Python</div>
+                  <div class="pill-status">Core Language • Scripting &amp; Logic</div>
+                </div>
+                <span class="pill-badge active">PRACTICING</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-c"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">C</div>
+                  <div class="pill-status">Memory, Pointers &amp; Systems</div>
+                </div>
+                <span class="pill-badge active">ACADEMIC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: WEB DEVELOPMENT -->
+          <div class="skill-card-vintage">
+            <div class="card-rivet top-left"></div>
+            <div class="card-rivet top-right"></div>
+            <div class="card-category-strip">
+              <span class="cat-tag">CAT. 02</span>
+              <h3 class="cat-title"><i class="fa-solid fa-globe"></i> WEB DEVELOPMENT</h3>
+            </div>
+            <p class="cat-desc">Building accessible, standards-compliant, responsive digital interfaces.</p>
+            
+            <div class="skill-items-list">
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-html5"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">HTML5</div>
+                  <div class="pill-status">Semantic Markup &amp; Accessibility</div>
+                </div>
+                <span class="pill-badge active">SOLID</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">CSS3</div>
+                  <div class="pill-status">Flexbox, Grid, Animations &amp; Custom Layouts</div>
+                </div>
+                <span class="pill-badge active">CREATIVE</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-js"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">JavaScript</div>
+                  <div class="pill-status">ES6+, DOM Manipulation, Asynchronous Logic</div>
+                </div>
+                <span class="pill-badge active">CORE</span>
+              </div>
+
+              <div class="skill-pill exploring-pill">
+                <div class="pill-icon"><i class="fa-brands fa-node"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Node.js</div>
+                  <div class="pill-status">Server-Side Runtimes &amp; REST APIs</div>
+                </div>
+                <span class="pill-badge exploring">EXPLORING</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: DEVELOPER TOOLS -->
+          <div class="skill-card-vintage">
+            <div class="card-rivet top-left"></div>
+            <div class="card-rivet top-right"></div>
+            <div class="card-category-strip">
+              <span class="cat-tag">CAT. 03</span>
+              <h3 class="cat-title"><i class="fa-solid fa-wrench"></i> DEVELOPER TOOLS</h3>
+            </div>
+            <p class="cat-desc">Daily drivers and terminal environments that accelerate crafting code.</p>
+            
+            <div class="skill-items-list">
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-git-alt"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Git</div>
+                  <div class="pill-status">Version Control, Branching, Diffs</div>
+                </div>
+                <span class="pill-badge active">DAILY</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">GitHub</div>
+                  <div class="pill-status">Collaboration, Issues, Pull Requests</div>
+                </div>
+                <span class="pill-badge active">DAILY</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-code-branch"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">VS Code</div>
+                  <div class="pill-status">Extensions, Debugging, Custom Configs</div>
+                </div>
+                <span class="pill-badge active">PRIMARY</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-terminal"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Terminal &amp; CLI</div>
+                  <div class="pill-status">Zsh/Bash, Shell Utilities, Pipelines</div>
+                </div>
+                <span class="pill-badge active">COMFORTABLE</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-brands fa-linux"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Linux Fundamentals</div>
+                  <div class="pill-status">Filesystem, Permissions, Processes</div>
+                </div>
+                <span class="pill-badge active">FOUNDATIONAL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: CORE SKILLS -->
+          <div class="skill-card-vintage">
+            <div class="card-rivet top-left"></div>
+            <div class="card-rivet top-right"></div>
+            <div class="card-category-strip">
+              <span class="cat-tag">CAT. 04</span>
+              <h3 class="cat-title"><i class="fa-solid fa-brain"></i> CORE SKILLS</h3>
+            </div>
+            <p class="cat-desc">Cognitive and interpersonal foundations essential to engineering solutions.</p>
+            
+            <div class="skill-items-list">
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Problem Solving</div>
+                  <div class="pill-status">Deconstructing complex challenges</div>
+                </div>
+                <span class="pill-badge active">ESSENTIAL</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Analytical Thinking</div>
+                  <div class="pill-status">Pattern recognition &amp; data interpretation</div>
+                </div>
+                <span class="pill-badge active">CRITICAL</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Logical Reasoning</div>
+                  <div class="pill-status">Algorithm design &amp; structured flows</div>
+                </div>
+                <span class="pill-badge active">HABITUAL</span>
+              </div>
+
+              <div class="skill-pill">
+                <div class="pill-icon"><i class="fa-solid fa-people-group"></i></div>
+                <div class="pill-info">
+                  <div class="pill-name">Team Collaboration</div>
+                  <div class="pill-status">Peer reviews, communication, hackathons</div>
+                </div>
+                <span class="pill-badge active">TEAMWORK</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 5: INTEREST AREAS -->
+          <div class="skill-card-vintage full-width-card">
+            <div class="card-rivet top-left"></div>
+            <div class="card-rivet top-right"></div>
+            <div class="card-category-strip">
+              <span class="cat-tag">CAT. 05</span>
+              <h3 class="cat-title"><i class="fa-solid fa-compass-drafting"></i> INTEREST AREAS &amp; HORIZONS</h3>
+            </div>
+            <p class="cat-desc">Domains where I spend time reading, researching and testing concepts.</p>
+            
+            <div class="interest-chips-grid">
+              <div class="interest-chip">
+                <span class="chip-icon"><i class="fa-brands fa-osi"></i></span>
+                <div class="chip-content">
+                  <div class="chip-name">Open Source</div>
+                  <div class="chip-sub">FOSS ethos, transparent code, community PRs</div>
+                </div>
+              </div>
+
+              <div class="interest-chip">
+                <span class="chip-icon"><i class="fa-solid fa-layer-group"></i></span>
+                <div class="chip-content">
+                  <div class="chip-name">Full-Stack Development</div>
+                  <div class="chip-sub">Bridging elegant UIs with dependable servers</div>
+                </div>
+              </div>
+
+              <div class="interest-chip">
+                <span class="chip-icon"><i class="fa-solid fa-gears"></i></span>
+                <div class="chip-content">
+                  <div class="chip-name">Software Engineering</div>
+                  <div class="chip-sub">Modular architecture, clean code &amp; testing</div>
+                </div>
+              </div>
+
+              <div class="interest-chip">
+                <span class="chip-icon"><i class="fa-solid fa-chart-line"></i></span>
+                <div class="chip-content">
+                  <div class="chip-name">Technology &amp; Trading</div>
+                  <div class="chip-sub">Quantitative analytics, market dynamics &amp; data models</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="torn-paper-edge inverted" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         SECTION 04: PROJECTS
+         ======================================================== -->
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[04]</span>
+          <span class="sec-category">ARCHIVE OF EXPERIMENTS &amp; BUILDS</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">EXHIBIT GALLERY</span>
+        </div>
+
+        <div class="section-title-wrap flex-between">
+          <div>
+            <h2 class="editorial-heading">PROJECTS &amp; PROTOTYPES</h2>
+            <p class="section-subtitle">
+              Interactive demonstrations and working prototypes created during my first year.
+              <span class="demo-disclaimer-tag"><i class="fa-solid fa-triangle-exclamation"></i> NOTE: Illustrative demo projects &amp; prototypes — not claimed as completed client work.</span>
+            </p>
+          </div>
+
+          <!-- Project Category Filter (Required Item 7) -->
+          <div class="project-filter-tabs" id="projectFilter">
+            <button class="filter-btn active" data-filter="all">ALL [5]</button>
+            <button class="filter-btn" data-filter="web">WEB APPS [3]</button>
+            <button class="filter-btn" data-filter="system">SYSTEM &amp; CLI [1]</button>
+            <button class="filter-btn" data-filter="hackathon">HACKATHON [1]</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: Personal Portfolio -->
+          <article class="project-card" data-category="web" data-project-id="1">
+            <div class="project-card-header">
+              <span class="proj-num">NO. 01</span>
+              <span class="proj-type-badge web">WEB EXPERIENCE</span>
+              <span class="proj-status-tag">DEMO / ACTIVE</span>
+            </div>
+
+            <div class="project-thumb-frame">
+              <img src="assets/images/project-portfolio.svg" 
+                   alt="Personal Portfolio project preview" 
+                   class="project-img" />
+              <div class="photo-tape"></div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Personal Developer Portfolio</h3>
+              <p class="project-problem"><strong>Problem:</strong> Standard template portfolios are sterile and fail to convey personality, creative design aptitude, or architectural curiosity.</p>
+              <p class="project-solution"><strong>Solution:</strong> Engineered an editorial digital magazine &amp; vintage scrapbook hybrid with zero heavyweight frameworks, relying exclusively on semantic HTML5, expressive CSS3, and vanilla JS.</p>
+              
+              <!-- Expandable feature toggle -->
+              <div class="expandable-drawer" id="drawer-1">
+                <h4 class="drawer-heading">Key Features:</h4>
+                <ul class="drawer-list">
+                  <li>Vintage paper textures, custom typography, washi tape &amp; stamps</li>
+                  <li>Fully responsive category navigation bar with mobile drawer</li>
+                  <li>Interactive project blueprint inspection modal and category filtering</li>
+                  <li>Accessible, zero-dependency audio synthesizer feedback</li>
+                </ul>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Vanilla JS</span>
+                <span class="tech-tag">Responsive</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://github.com/arinjain/portfolio" target="_blank" rel="noopener noreferrer" class="btn-proj btn-code" title="View Source on GitHub">
+                  <i class="fa-brands fa-github"></i> GITHUB
+                </a>
+                <a href="#home" class="btn-proj btn-demo" title="Current Live Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+                <button class="btn-proj btn-inspect" data-inspect="1" title="Open Architectural Blueprint">
+                  <i class="fa-solid fa-file-lines"></i> DETAILS
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Student Management System -->
+          <article class="project-card" data-category="system" data-project-id="2">
+            <div class="project-card-header">
+              <span class="proj-num">NO. 02</span>
+              <span class="proj-type-badge system">CLI &amp; SYSTEM</span>
+              <span class="proj-status-tag">DEMO CONCEPT</span>
+            </div>
+
+            <div class="project-thumb-frame">
+              <img src="assets/images/project-student.svg" 
+                   alt="Student Management System preview" 
+                   class="project-img" />
+              <div class="photo-tape"></div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Student Management System</h3>
+              <p class="project-problem"><strong>Problem:</strong> Academic tracking often relies on bloated spreadsheets prone to manual entry mistakes and corrupt records.</p>
+              <p class="project-solution"><strong>Solution:</strong> Developed a modular Python CLI application that handles student record enrollment, course allocations, GPA calculation, and persistent file/SQLite storage.</p>
+              
+              <div class="expandable-drawer" id="drawer-2">
+                <h4 class="drawer-heading">Key Features:</h4>
+                <ul class="drawer-list">
+                  <li>CRUD operations for student directories with input validation</li>
+                  <li>Search and filtering by cohort, course, and academic standing</li>
+                  <li>Clean tabular console presentation using ASCII borders</li>
+                  <li>Modular architecture decoupling business logic from storage</li>
+                </ul>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">CLI</span>
+                <span class="tech-tag">File I/O</span>
+                <span class="tech-tag">Data Modeling</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://github.com/arinjain/student-management" target="_blank" rel="noopener noreferrer" class="btn-proj btn-code">
+                  <i class="fa-brands fa-github"></i> GITHUB
+                </a>
+                <button class="btn-proj btn-demo" data-inspect="2" title="Inspect CLI blueprint">
+                  <i class="fa-solid fa-code"></i> CLI SPECS
+                </button>
+                <button class="btn-proj btn-inspect" data-inspect="2">
+                  <i class="fa-solid fa-file-lines"></i> DETAILS
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Expense Tracker -->
+          <article class="project-card" data-category="web" data-project-id="3">
+            <div class="project-card-header">
+              <span class="proj-num">NO. 03</span>
+              <span class="proj-type-badge web">WEB APP</span>
+              <span class="proj-status-tag">DEMO PROTOTYPE</span>
+            </div>
+
+            <div class="project-thumb-frame">
+              <img src="assets/images/project-expense.svg" 
+                   alt="Expense Tracker preview" 
+                   class="project-img" />
+              <div class="photo-tape"></div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Expense &amp; Budget Tracker</h3>
+              <p class="project-problem"><strong>Problem:</strong> University students find budgeting apps cluttered with advertising and lacking lightweight privacy-first local storage.</p>
+              <p class="project-solution"><strong>Solution:</strong> Built an intuitive ledger application featuring categorized spending breakdowns, monthly spending analytics, and zero-server client-side persistence.</p>
+              
+              <div class="expandable-drawer" id="drawer-3">
+                <h4 class="drawer-heading">Key Features:</h4>
+                <ul class="drawer-list">
+                  <li>Instant ledger logging with category categorization &amp; timestamps</li>
+                  <li>Visual monthly bar breakdown computed directly in vanilla JavaScript</li>
+                  <li>Local storage automatic synchronization and JSON/CSV export</li>
+                  <li>Filterable transaction history with real-time budget warnings</li>
+                </ul>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">LocalStorage</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://github.com/arinjain/expense-tracker" target="_blank" rel="noopener noreferrer" class="btn-proj btn-code">
+                  <i class="fa-brands fa-github"></i> GITHUB
+                </a>
+                <a href="#contact" class="btn-proj btn-demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+                <button class="btn-proj btn-inspect" data-inspect="3">
+                  <i class="fa-solid fa-file-lines"></i> DETAILS
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Weather Dashboard -->
+          <article class="project-card" data-category="web" data-project-id="4">
+            <div class="project-card-header">
+              <span class="proj-num">NO. 04</span>
+              <span class="proj-type-badge web">WEB APP</span>
+              <span class="proj-status-tag">DEMO PROTOTYPE</span>
+            </div>
+
+            <div class="project-thumb-frame">
+              <img src="assets/images/project-weather.svg" 
+                   alt="Weather Dashboard preview" 
+                   class="project-img" />
+              <div class="photo-tape"></div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Weather Observation Station</h3>
+              <p class="project-problem"><strong>Problem:</strong> Simple weather tools often fail to present atmospheric trends, air pressure, and weekly forecasts in an aesthetically pleasing manner.</p>
+              <p class="project-solution"><strong>Solution:</strong> Crafted a vintage meteorological station dashboard leveraging asynchronous Fetch API requests to OpenWeather/public APIs with dynamic day/night visuals.</p>
+              
+              <div class="expandable-drawer" id="drawer-4">
+                <h4 class="drawer-heading">Key Features:</h4>
+                <ul class="drawer-list">
+                  <li>Real-time weather query by city or geolocation coordinates</li>
+                  <li>5-day forecast cards with temperature range &amp; humidity indices</li>
+                  <li>Graceful offline state and cached responses for quick lookups</li>
+                  <li>Barometer gauge illustration with vintage print aesthetics</li>
+                </ul>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Async JS</span>
+                <span class="tech-tag">Fetch API</span>
+                <span class="tech-tag">JSON</span>
+                <span class="tech-tag">CSS Grid</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://github.com/arinjain/weather-dashboard" target="_blank" rel="noopener noreferrer" class="btn-proj btn-code">
+                  <i class="fa-brands fa-github"></i> GITHUB
+                </a>
+                <a href="#contact" class="btn-proj btn-demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+                <button class="btn-proj btn-inspect" data-inspect="4">
+                  <i class="fa-solid fa-file-lines"></i> DETAILS
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Hackathon Project -->
+          <article class="project-card" data-category="hackathon" data-project-id="5">
+            <div class="project-card-header">
+              <span class="proj-num">NO. 05</span>
+              <span class="proj-type-badge hackathon">HACKATHON SPRINT</span>
+              <span class="proj-status-tag">SPRINT PROTOTYPE</span>
+            </div>
+
+            <div class="project-thumb-frame">
+              <img src="assets/images/project-hackathon.svg" 
+                   alt="Hackathon project preview" 
+                   class="project-img" />
+              <div class="photo-tape"></div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Collaborative Hackathon Sprint</h3>
+              <p class="project-problem"><strong>Problem:</strong> Rapid prototype sprints require immediate alignment between front-end interfaces, client state, and backend data endpoints.</p>
+              <p class="project-solution"><strong>Solution:</strong> Co-created a collaborative web tool in an intensive 36-hour sprint focusing on rapid prototyping, clean component interfaces, and Git branch workflows.</p>
+              
+              <div class="expandable-drawer" id="drawer-5">
+                <h4 class="drawer-heading">Key Features:</h4>
+                <ul class="drawer-list">
+                  <li>Rapid iterative development with version-controlled commits</li>
+                  <li>Responsive layout tested across desktop and mobile form factors</li>
+                  <li>Modular JavaScript codebase ready for future backend integration</li>
+                  <li>Demonstrates team collaboration, task partitioning, and fast pivots</li>
+                </ul>
+              </div>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Prototyping</span>
+                <span class="tech-tag">Team Git</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+
+              <div class="project-card-actions">
+                <a href="https://github.com/arinjain/hackathon-prototype" target="_blank" rel="noopener noreferrer" class="btn-proj btn-code">
+                  <i class="fa-brands fa-github"></i> GITHUB
+                </a>
+                <a href="#contact" class="btn-proj btn-demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+                <button class="btn-proj btn-inspect" data-inspect="5">
+                  <i class="fa-solid fa-file-lines"></i> DETAILS
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Project Modal / Details Drawer (Required Item 7) -->
+    <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-window">
+        <div class="modal-header">
+          <div class="modal-tag-row">
+            <span class="modal-spec-code">DOSSIER SPECIFICATION</span>
+            <span class="modal-project-id" id="modalProjectId">AJ-PROJ-01</span>
+          </div>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close project modal">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </div>
+
+    <div class="dotted-divider-line"></div>
+
+    <!-- ========================================================
+         SECTION 05: ACHIEVEMENTS
+         ======================================================== -->
+    <section id="achievements" class="achievements-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[05]</span>
+          <span class="sec-category">RECORD OF MERIT &amp; MILESTONES</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">HISTORICAL ARCHIVE</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">ACHIEVEMENTS &amp; RECOGNITION</h2>
+          <p class="section-subtitle">
+            Academic records, technical learning milestones, and certifications. Grounded, verified, with editable placeholders clearly indicated.
+          </p>
+        </div>
+
+        <div class="achievements-columns">
+          
+          <!-- Column 1: Academic Achievements -->
+          <div class="achieve-column">
+            <div class="achieve-col-header">
+              <span class="col-seal"><i class="fa-solid fa-graduation-cap"></i></span>
+              <h3 class="col-title">ACADEMIC EXCELLENCE</h3>
+            </div>
+
+            <div class="timeline-vintage">
+              <!-- Item 1 -->
+              <div class="timeline-entry">
+                <div class="entry-marker"></div>
+                <div class="entry-date">2024</div>
+                <div class="entry-card">
+                  <div class="stamp-verified">VERIFIED</div>
+                  <h4 class="entry-title">CBSE Class 12 Board Examination</h4>
+                  <div class="entry-score"><i class="fa-solid fa-award"></i> 90.4% Overall Score</div>
+                  <p class="entry-desc">
+                    Achieved 90.4% in senior secondary examinations with strong marks in Physics, Chemistry, and Mathematics, demonstrating discipline and analytical consistency.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="timeline-entry">
+                <div class="entry-marker"></div>
+                <div class="entry-date">2023</div>
+                <div class="entry-card">
+                  <div class="stamp-verified">VERIFIED</div>
+                  <h4 class="entry-title">Class 11 Academic Performance</h4>
+                  <div class="entry-score"><i class="fa-solid fa-certificate"></i> High Academic Standing</div>
+                  <p class="entry-desc">
+                    Demonstrated robust grasp of calculus, mechanics, and computational fundamentals, solidifying foundations for Computer Science.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="timeline-entry">
+                <div class="entry-marker"></div>
+                <div class="entry-date">DISTRICT LEVEL</div>
+                <div class="entry-card">
+                  <div class="stamp-verified">VERIFIED</div>
+                  <h4 class="entry-title">Bal Vigyan District-Level Achievement</h4>
+                  <div class="entry-score"><i class="fa-solid fa-flask-vial"></i> Scientific Experimentation &amp; Data Analysis</div>
+                  <p class="entry-desc">
+                    Recognized at the district-level science fair (Bal Vigyan) for designing, executing, and presenting an empirical data project involving scientific methodology.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Technical Milestones & Placeholders -->
+          <div class="achieve-column">
+            <div class="achieve-col-header">
+              <span class="col-seal"><i class="fa-solid fa-laptop-code"></i></span>
+              <h3 class="col-title">TECHNICAL MILESTONES</h3>
+            </div>
+
+            <div class="timeline-vintage">
+              <!-- Item 1 -->
+              <div class="timeline-entry">
+                <div class="entry-marker"></div>
+                <div class="entry-date">2024–PRESENT</div>
+                <div class="entry-card">
+                  <div class="stamp-verified">ACTIVE</div>
+                  <h4 class="entry-title">Coding Practice &amp; Problem Solving</h4>
+                  <div class="entry-score"><i class="fa-solid fa-code"></i> Daily Algorithmic Conditioning</div>
+                  <p class="entry-desc">
+                    Practicing core data structures, recursive logic, and problem solving across algorithmic coding platforms (LeetCode, HackerRank, CodeChef).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="timeline-entry">
+                <div class="entry-marker"></div>
+                <div class="entry-date">FOUNDATIONS</div>
+                <div class="entry-card">
+                  <div class="stamp-verified">IN PROGRESS</div>
+                  <h4 class="entry-title">Technical Learning Milestones</h4>
+                  <div class="entry-score"><i class="fa-solid fa-microchip"></i> CS Systems &amp; Web Stack</div>
+                  <p class="entry-desc">
+                    Completed deep dives into memory models in C, asynchronous event loops in JavaScript, and Git branching workflows.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Hackathon Participation Placeholder (Item 8 requirement) -->
+              <div class="timeline-entry placeholder-entry">
+                <div class="entry-marker placeholder-marker"></div>
+                <div class="entry-date">UPCOMING</div>
+                <div class="entry-card placeholder-card">
+                  <div class="stamp-placeholder">EDITABLE PLACEHOLDER</div>
+                  <h4 class="entry-title">[Hackathon Participation]</h4>
+                  <div class="entry-score"><i class="fa-solid fa-pen-to-square"></i> Slot Reserved for Upcoming Event</div>
+                  <p class="entry-desc">
+                    Placeholder reserved for hackathon awards and verified participation. Updates will be logged upon event confirmation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4: Open Source Placeholder (Item 8 requirement) -->
+              <div class="timeline-entry placeholder-entry">
+                <div class="entry-marker placeholder-marker"></div>
+                <div class="entry-date">UPCOMING</div>
+                <div class="entry-card placeholder-card">
+                  <div class="stamp-placeholder">EDITABLE PLACEHOLDER</div>
+                  <h4 class="entry-title">[Open-Source Contribution Milestone]</h4>
+                  <div class="entry-score"><i class="fa-solid fa-code-pull-request"></i> Slot Reserved for Merged Upstream PR</div>
+                  <p class="entry-desc">
+                    Placeholder reserved for major upstream contributions and recognized FOSS patches once merged.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Certifications Ledger Cards (Required Item 8) -->
+        <div class="certifications-ledger-block">
+          <div class="ledger-title-strip">
+            <span class="ledger-tag"><i class="fa-solid fa-stamp"></i> CERTIFICATIONS &amp; STUDY MODULES</span>
+            <span class="ledger-sub">(Editable placeholders and active course tracks)</span>
+          </div>
+
+          <div class="certs-grid">
+            <div class="cert-card">
+              <div class="cert-badge-icon"><i class="fa-brands fa-python"></i></div>
+              <div class="cert-meta">
+                <h4 class="cert-name">Python Programming</h4>
+                <div class="cert-issuer">Core Language Fundamentals &amp; OOP</div>
+                <div class="cert-status-line"><span class="badge-tag verified">VERIFIED / ACTIVE</span></div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge-icon"><i class="fa-brands fa-git-alt"></i></div>
+              <div class="cert-meta">
+                <h4 class="cert-name">Git &amp; GitHub Version Control</h4>
+                <div class="cert-issuer">Branch Management, Merges &amp; Workflows</div>
+                <div class="cert-status-line"><span class="badge-tag verified">VERIFIED / ACTIVE</span></div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge-icon"><i class="fa-brands fa-html5"></i></div>
+              <div class="cert-meta">
+                <h4 class="cert-name">Web Development Foundations</h4>
+                <div class="cert-issuer">Semantic HTML, Responsive CSS &amp; Modern JS</div>
+                <div class="cert-status-line"><span class="badge-tag verified">VERIFIED / ACTIVE</span></div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-badge-icon"><i class="fa-brands fa-linux"></i></div>
+              <div class="cert-meta">
+                <h4 class="cert-name">Linux Fundamentals</h4>
+                <div class="cert-issuer">CLI, Shell Scripting &amp; Environment Setup</div>
+                <div class="cert-status-line"><span class="badge-tag verified">VERIFIED / ACTIVE</span></div>
+              </div>
+            </div>
+
+            <!-- Editable Placeholder Certification -->
+            <div class="cert-card placeholder-cert">
+              <div class="cert-badge-icon"><i class="fa-solid fa-circle-question"></i></div>
+              <div class="cert-meta">
+                <h4 class="cert-name">[Future Certification]</h4>
+                <div class="cert-issuer">Cloud / Backend / Specialization</div>
+                <div class="cert-status-line"><span class="badge-tag editable">EDITABLE PLACEHOLDER</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="torn-paper-edge" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         SECTION 06: EXPERIENCE & COMMUNITY
+         ======================================================== -->
+    <section id="experience" class="experience-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[06]</span>
+          <span class="sec-category">COMMUNITY, CLUBS &amp; COLLABORATION</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">FIELD LOGS</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">BEYOND THE SCREEN</h2>
+          <p class="section-subtitle">
+            Collaborative initiatives, developer clubs, hackathon preparations, and technical community engagement.
+            <span class="honest-note">Maintained with integrity — verified participation without exaggerated titles.</span>
+          </p>
+        </div>
+
+        <!-- Interactive Scrapbook Experience Timeline -->
+        <div class="experience-timeline">
+
+          <!-- Entry 1: OSS Creator Club -->
+          <div class="exp-entry-card">
+            <div class="exp-side-tag">
+              <span class="exp-year">2024–PRES.</span>
+              <span class="exp-stamp"><i class="fa-brands fa-osi"></i> CLUB</span>
+            </div>
+            <div class="exp-content">
+              <div class="tape-strip top-left-tape"></div>
+              <h3 class="exp-role">OSS Creator Club</h3>
+              <div class="exp-context">Active Member &amp; Open Source Explorer • Rishihood University</div>
+              <p class="exp-text">
+                Participating in weekly campus open-source developer sessions, reviewing public GitHub repositories, discussing issue triage, and collaborating with fellow first-year and senior students on collaborative code bases.
+              </p>
+              <div class="exp-tags">
+                <span><i class="fa-solid fa-code-fork"></i> Git Workflows</span>
+                <span><i class="fa-solid fa-comments"></i> Technical Discussions</span>
+                <span><i class="fa-solid fa-handshake"></i> Peer Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 2: Open-Source Community Involvement -->
+          <div class="exp-entry-card">
+            <div class="exp-side-tag">
+              <span class="exp-year">2024</span>
+              <span class="exp-stamp"><i class="fa-solid fa-globe"></i> COMMUNITY</span>
+            </div>
+            <div class="exp-content">
+              <div class="tape-strip top-right-tape"></div>
+              <h3 class="exp-role">Open-Source Community Involvement</h3>
+              <div class="exp-context">FOSS Enthusiast &amp; Documentation Contributor</div>
+              <p class="exp-text">
+                Exploring beginner-friendly open-source organizations, reviewing good-first-issues in student tooling, and engaging with Discord and GitHub developer forums to understand software distribution and maintainer expectations.
+              </p>
+              <div class="exp-tags">
+                <span><i class="fa-solid fa-book-open"></i> Documentation</span>
+                <span><i class="fa-solid fa-circle-exclamation"></i> Issue Research</span>
+                <span><i class="fa-solid fa-users"></i> Community Forums</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 3: Hackathon Participation & Sprints -->
+          <div class="exp-entry-card">
+            <div class="exp-side-tag">
+              <span class="exp-year">2024</span>
+              <span class="exp-stamp"><i class="fa-solid fa-bolt"></i> SPRINT</span>
+            </div>
+            <div class="exp-content">
+              <div class="tape-strip top-left-tape"></div>
+              <h3 class="exp-role">Hackathon Participation &amp; Team Collaborations</h3>
+              <div class="exp-context">Frontend &amp; Rapid Prototyping Collaborator</div>
+              <p class="exp-text">
+                Teamed up with campus peers during internal hackathon jams and project sprint weekends. Focused on front-end wireframing, component structuring, and presenting solution pitches under tight deadlines.
+              </p>
+              <div class="exp-tags">
+                <span><i class="fa-solid fa-people-arrows"></i> Team Dynamics</span>
+                <span><i class="fa-solid fa-stopwatch"></i> Rapid Execution</span>
+                <span><i class="fa-solid fa-person-chalkboard"></i> Pitching</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 4: Technical Events & Volunteering -->
+          <div class="exp-entry-card">
+            <div class="exp-side-tag">
+              <span class="exp-year">2024</span>
+              <span class="exp-stamp"><i class="fa-solid fa-heart-pulse"></i> VOLUNTEER</span>
+            </div>
+            <div class="exp-content">
+              <div class="tape-strip top-right-tape"></div>
+              <h3 class="exp-role">Technical Events &amp; Campus Volunteering</h3>
+              <div class="exp-context">Event Logistics &amp; Student Peer Mentoring</div>
+              <p class="exp-text">
+                Assisting in coordinating campus tech orientations, helping batchmates with local development environment setup (VS Code, Python interpreters, Git configurations), and promoting collaborative student study groups.
+              </p>
+              <div class="exp-tags">
+                <span><i class="fa-solid fa-calendar-check"></i> Event Support</span>
+                <span><i class="fa-solid fa-terminal"></i> Dev Environment Help</span>
+                <span><i class="fa-solid fa-chalkboard-user"></i> Peer Mentoring</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="dotted-divider-line"></div>
+
+    <!-- ========================================================
+         SECTION 07: LEARNING JOURNEY
+         ======================================================== -->
+    <section id="learning" class="learning-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[07]</span>
+          <span class="sec-category">PEDAGOGICAL BLUEPRINT &amp; ROADMAP</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">HORIZON 2025</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">LEARNING JOURNEY &amp; ROADMAP</h2>
+          <p class="section-subtitle">
+            A transparent visual roadmap detailing active study areas alongside future milestones. No fabricated percentages — pure focus.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          
+          <!-- Column 1: CURRENTLY LEARNING -->
+          <div class="roadmap-panel current-panel">
+            <div class="panel-header">
+              <div class="panel-icon"><i class="fa-solid fa-compass"></i></div>
+              <div>
+                <span class="panel-tag">PHASE 01 • ACTIVE FOUNDATIONS</span>
+                <h3 class="panel-title">CURRENTLY LEARNING</h3>
+              </div>
+            </div>
+
+            <p class="panel-desc">
+              Daily deep dives, core coursework, and hands-on exercises being actively practiced right now.
+            </p>
+
+            <div class="roadmap-steps-list">
+              <div class="roadmap-step active-step">
+                <div class="step-num">01</div>
+                <div class="step-details">
+                  <h4 class="step-title">Python Programming</h4>
+                  <p class="step-sub">Object-oriented paradigms, algorithm scripting, data handling.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step active-step">
+                <div class="step-num">02</div>
+                <div class="step-details">
+                  <h4 class="step-title">HTML &amp; Semantic Web</h4>
+                  <p class="step-sub">Structuring clean, accessible DOM trees, microdata &amp; SEO principles.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step active-step">
+                <div class="step-num">03</div>
+                <div class="step-details">
+                  <h4 class="step-title">CSS3 Architecture</h4>
+                  <p class="step-sub">Modern flexbox, CSS grid, custom variables &amp; responsive layouts.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step active-step">
+                <div class="step-num">04</div>
+                <div class="step-details">
+                  <h4 class="step-title">JavaScript Fundamentals</h4>
+                  <p class="step-sub">ES6+ syntax, asynchronous promises, Fetch API, DOM manipulation.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step active-step">
+                <div class="step-num">05</div>
+                <div class="step-details">
+                  <h4 class="step-title">Git &amp; GitHub Version Control</h4>
+                  <p class="step-sub">Commit hygiene, branch merges, issue tracking, remote synchronization.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step active-step">
+                <div class="step-num">06</div>
+                <div class="step-details">
+                  <h4 class="step-title">Command Line Interface (CLI)</h4>
+                  <p class="step-sub">Zsh/Bash shell navigation, pipes, file streams &amp; scripting.</p>
+                  <span class="step-status in-progress"><span class="pulse-dot"></span> ACTIVE FOCUS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: NEXT GOALS -->
+          <div class="roadmap-panel future-panel">
+            <div class="panel-header">
+              <div class="panel-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+              <div>
+                <span class="panel-tag">PHASE 02 • ON THE HORIZON</span>
+                <h3 class="panel-title">NEXT GOALS &amp; EXPANSIONS</h3>
+              </div>
+            </div>
+
+            <p class="panel-desc">
+              Structured learning tracks slated for subsequent semesters and personal expansion goals.
+            </p>
+
+            <div class="roadmap-steps-list">
+              <div class="roadmap-step future-step">
+                <div class="step-num">07</div>
+                <div class="step-details">
+                  <h4 class="step-title">Node.js Server Architecture</h4>
+                  <p class="step-sub">Express.js, RESTful routing, middleware &amp; asynchronous I/O backend.</p>
+                  <span class="step-status queued"><i class="fa-regular fa-clock"></i> QUEUED NEXT</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step future-step">
+                <div class="step-num">08</div>
+                <div class="step-details">
+                  <h4 class="step-title">React Component Systems</h4>
+                  <p class="step-sub">Declarative state machines, component lifecycles, and hooks.</p>
+                  <span class="step-status queued"><i class="fa-regular fa-clock"></i> QUEUED NEXT</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step future-step">
+                <div class="step-num">09</div>
+                <div class="step-details">
+                  <h4 class="step-title">Data Structures &amp; Algorithms</h4>
+                  <p class="step-sub">Trees, graphs, dynamic programming, sorting optimization, Big-O.</p>
+                  <span class="step-status queued"><i class="fa-regular fa-clock"></i> CORE SEMESTER</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step future-step">
+                <div class="step-num">10</div>
+                <div class="step-details">
+                  <h4 class="step-title">Backend Development &amp; Databases</h4>
+                  <p class="step-sub">Relational schema design (PostgreSQL/SQLite), ORMs, authentication.</p>
+                  <span class="step-status queued"><i class="fa-regular fa-clock"></i> FUTURE FOCUS</span>
+                </div>
+              </div>
+
+              <div class="roadmap-step future-step">
+                <div class="step-num">11</div>
+                <div class="step-details">
+                  <h4 class="step-title">Open-Source Contributions</h4>
+                  <p class="step-sub">Submitting upstream PRs to recognized ecosystem repositories.</p>
+                  <span class="step-status queued"><i class="fa-regular fa-clock"></i> ONGOING PURSUIT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="torn-paper-edge inverted" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         SECTION 08: OPEN SOURCE JOURNEY
+         ======================================================== -->
+    <section id="opensource" class="opensource-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[08]</span>
+          <span class="sec-category">FREE &amp; OPEN SOURCE SOFTWARE</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">FOSS DISPATCH</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">OPEN SOURCE JOURNEY</h2>
+          <p class="section-subtitle">
+            Exploring the collaborative heart of the software world. A transparent showcase of repositories, organizations explored, and contribution milestones.
+          </p>
+        </div>
+
+        <div class="oss-spotlight-card">
+          <div class="oss-card-header">
+            <div class="oss-profile-info">
+              <div class="oss-avatar"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <h3 class="oss-username">arinjain</h3>
+                <p class="oss-bio">First-Year CS Undergrad • Open Source Explorer • Rishihood Univ</p>
+              </div>
+            </div>
+            <a href="https://github.com/arinjain" target="_blank" rel="noopener noreferrer" class="btn btn-primary oss-visit-btn">
+              <i class="fa-brands fa-github"></i> VISIT GITHUB PROFILE &rarr;
+            </a>
+          </div>
+
+          <!-- Contribution Simulation Grid (Vintage Halftone Style) -->
+          <div class="oss-contribution-panel">
+            <div class="panel-label-row">
+              <span class="panel-label"><i class="fa-solid fa-code-commit"></i> CONTRIBUTION MATRIX (SIMULATED ACTIVITY)</span>
+              <span class="panel-note">Placeholder metrics until direct GitHub GraphQL token is connected</span>
+            </div>
+            
+            <div class="contrib-calendar-grid" id="contribCalendar">
+              <!-- Rendered via CSS/JS with vintage green/sepia tones -->
+            </div>
+
+            <div class="contrib-legend">
+              <span>Less</span>
+              <span class="legend-cell lvl-0"></span>
+              <span class="legend-cell lvl-1"></span>
+              <span class="legend-cell lvl-2"></span>
+              <span class="legend-cell lvl-3"></span>
+              <span class="legend-cell lvl-4"></span>
+              <span>More</span>
+            </div>
+          </div>
+
+          <!-- OSS Stats & Tracking Cards -->
+          <div class="oss-metrics-grid">
+            <div class="oss-metric-card">
+              <div class="metric-num">[03]</div>
+              <div class="metric-label">Organizations Explored</div>
+              <div class="metric-sub">Focusing on developer tools &amp; education</div>
+            </div>
+
+            <div class="oss-metric-card">
+              <div class="metric-num">[05+]</div>
+              <div class="metric-label">Issues Investigated</div>
+              <div class="metric-sub">Documentation &amp; good-first-issues triage</div>
+            </div>
+
+            <div class="oss-metric-card">
+              <div class="metric-num">[02]</div>
+              <div class="metric-label">Pull Requests Drafted</div>
+              <div class="metric-sub">Placeholder stats for verified PRs</div>
+            </div>
+
+            <div class="oss-metric-card">
+              <div class="metric-num">[01]</div>
+              <div class="metric-label">Merged Contributions</div>
+              <div class="metric-sub">Personal &amp; campus open-source projects</div>
+            </div>
+          </div>
+
+          <!-- Organizations & Repos Explored -->
+          <div class="oss-orgs-strip">
+            <span class="orgs-heading">ECOSYSTEM EXPLORATION:</span>
+            <span class="org-tag"><i class="fa-brands fa-python"></i> Python Software Foundation</span>
+            <span class="org-tag"><i class="fa-brands fa-free-code-camp"></i> FreeCodeCamp</span>
+            <span class="org-tag"><i class="fa-solid fa-graduation-cap"></i> OSS Creator Club (RU)</span>
+            <span class="org-tag"><i class="fa-brands fa-linux"></i> Linux Kernel Docs</span>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             SECTION 12: CODING PROFILES (Required Item 12)
+             ======================================================== -->
+        <div class="coding-profiles-block">
+          <div class="section-title-wrap">
+            <h3 class="editorial-subheading"><i class="fa-solid fa-id-card"></i> COMPETITIVE &amp; CODING PROFILES</h3>
+            <p class="section-subtitle">
+              Direct links to algorithmic platforms where I solve problems and practice code logic. Profile URLs are editable.
+            </p>
+          </div>
+
+          <div class="coding-profiles-grid">
+            
+            <!-- Profile 1: GitHub -->
+            <a href="https://github.com/arinjain" target="_blank" rel="noopener noreferrer" class="profile-card">
+              <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="card-title">GitHub</div>
+              <div class="card-handle">@arinjain</div>
+              <div class="card-status active-status"><i class="fa-solid fa-link"></i> View Repositories</div>
+              <span class="badge-tag">PRIMARY CODEBASE</span>
+            </a>
+
+            <!-- Profile 2: LeetCode -->
+            <a href="https://leetcode.com/arinjain" target="_blank" rel="noopener noreferrer" class="profile-card">
+              <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+              <div class="card-title">LeetCode</div>
+              <div class="card-handle">@arinjain</div>
+              <div class="card-status active-status"><i class="fa-solid fa-link"></i> View Practice Profile</div>
+              <span class="badge-tag">DATA STRUCTURES</span>
+            </a>
+
+            <!-- Profile 3: Codeforces -->
+            <a href="https://codeforces.com/profile/arinjain" target="_blank" rel="noopener noreferrer" class="profile-card">
+              <div class="card-icon"><i class="fa-solid fa-chart-simple"></i></div>
+              <div class="card-title">Codeforces</div>
+              <div class="card-handle">@arinjain</div>
+              <div class="card-status active-status"><i class="fa-solid fa-link"></i> View Contest Profile</div>
+              <span class="badge-tag">COMPETITIVE LOGIC</span>
+            </a>
+
+            <!-- Profile 4: HackerRank -->
+            <a href="https://hackerrank.com/arinjain" target="_blank" rel="noopener noreferrer" class="profile-card">
+              <div class="card-icon"><i class="fa-brands fa-hackerrank"></i></div>
+              <div class="card-title">HackerRank</div>
+              <div class="card-handle">@arinjain</div>
+              <div class="card-status active-status"><i class="fa-solid fa-link"></i> View Badges &amp; Stars</div>
+              <span class="badge-tag">PROBLEM SOLVING</span>
+            </a>
+
+            <!-- Profile 5: CodeChef -->
+            <a href="https://codechef.com/users/arinjain" target="_blank" rel="noopener noreferrer" class="profile-card">
+              <div class="card-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div class="card-title">CodeChef</div>
+              <div class="card-handle">@arinjain</div>
+              <div class="card-status active-status"><i class="fa-solid fa-link"></i> View Rating</div>
+              <span class="badge-tag">ALGO CONTESTS</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="dotted-divider-line"></div>
+
+    <!-- ========================================================
+         SECTION 13: BEYOND CODING (Vintage Scrapbook)
+         ======================================================== -->
+    <section id="beyond" class="beyond-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[13]</span>
+          <span class="sec-category">ANECDOTES, CURIOSITIES &amp; HOBBIES</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">SCRAPBOOK FOLIO</span>
+        </div>
+
+        <div class="section-title-wrap">
+          <h2 class="editorial-heading">BEYOND CODING</h2>
+          <p class="section-subtitle">
+            A vintage scrapbook of personal curiosities, analytical pursuits, and creative interests that fuel my passion for building software.
+          </p>
+        </div>
+
+        <!-- Scrapbook Pinboard Canvas -->
+        <div class="scrapbook-pinboard">
+          
+          <!-- Scrapbook Item 1: Exploring Tech & Hardware -->
+          <div class="scrap-item scrap-card-1 rotate-1">
+            <div class="tape-strip top-center"></div>
+            <div class="scrap-photo">
+              <img src="assets/images/scrapbook-tech.svg" alt="Hardware exploration" />
+            </div>
+            <div class="scrap-caption">
+              <h4 class="scrap-title">Exploring Technology &amp; Gadgets</h4>
+              <p class="scrap-text">
+                Fascinated by mechanical keyboards, microcontrollers, vintage computer interfaces, and how physical transistors map to modern abstractions.
+              </p>
+              <span class="handwritten-tag">#hardware #logic</span>
+            </div>
+          </div>
+
+          <!-- Scrapbook Item 2: Trading & Analytics -->
+          <div class="scrap-item scrap-card-2 rotate-neg-2">
+            <div class="tape-strip top-center"></div>
+            <div class="scrap-photo">
+              <img src="assets/images/scrapbook-trading.svg" alt="Trading and quantitative charts" />
+            </div>
+            <div class="scrap-caption">
+              <h4 class="scrap-title">Financial Markets &amp; Trading</h4>
+              <p class="scrap-text">
+                Observing market structure, volatility models, technical charts, and quantitative logic. Applying programmatic discipline to risk management.
+              </p>
+              <span class="handwritten-tag">#analytics #quant</span>
+            </div>
+          </div>
+
+          <!-- Scrapbook Item 3: Problem Solving & Puzzles -->
+          <div class="scrap-item scrap-card-3 rotate-2">
+            <div class="note-pin">&#128204;</div>
+            <div class="sticky-note-yellow">
+              <div class="sticky-header">MENTAL GYM</div>
+              <h4 class="scrap-title">Puzzles &amp; Problem Solving</h4>
+              <p class="scrap-text">
+                Whether it's chess endgames, logic puzzles, or deconstructing mathematical paradoxes, I thrive on structural problem solving.
+              </p>
+              <div class="scrap-stamp-mini">TESTED</div>
+            </div>
+          </div>
+
+          <!-- Scrapbook Item 4: Community & Discussions -->
+          <div class="scrap-item scrap-card-4 rotate-neg-1">
+            <div class="tape-strip top-center"></div>
+            <div class="polaroid-photo">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80" 
+                   alt="Community collaboration" 
+                   onerror="this.onerror=null; this.src='assets/images/project-hackathon.svg';" />
+            </div>
+            <div class="scrap-caption">
+              <h4 class="scrap-title">Community &amp; Knowledge Sharing</h4>
+              <p class="scrap-text">
+                Active technical discussions, sharing interesting articles with peers, and building camaraderie through collective learning.
+              </p>
+              <span class="handwritten-tag">#community #synergy</span>
+            </div>
+          </div>
+
+          <!-- Scrapbook Item 5: Continuous Learning -->
+          <div class="scrap-item scrap-card-5 rotate-1">
+            <div class="washi-tape-strip-mini"></div>
+            <div class="index-card-vintage">
+              <div class="index-header">EXPEDITION LOG • 2024</div>
+              <h4 class="scrap-title">Continuous Experimentation</h4>
+              <p class="scrap-text">
+                "The joy of discovering how a system works underneath its highest abstraction layer." Constantly reading documentation and breaking code to understand it.
+              </p>
+              <div class="index-meta">STATUS: UNBOUND CURIOSITY</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="torn-paper-edge" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         SECTION 09: CONTACT (Letterpress Style)
+         ======================================================== -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-meta-header">
+          <span class="sec-index">[09]</span>
+          <span class="sec-category">CORRESPONDENCE &amp; INQUIRIES</span>
+          <span class="sec-line"></span>
+          <span class="sec-edition">DIRECT WIRE</span>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Column 1: Contact Details & Letterpress Intro -->
+          <div class="contact-info-block">
+            <div class="badge-post-it">
+              <span class="pin">&#128204;</span>
+              <span class="badge-txt">OPEN DISPATCH</span>
+            </div>
+
+            <h2 class="editorial-heading">
+              HAVE AN IDEA?<br />
+              <span class="accent-orange">LET'S BUILD SOMETHING.</span>
+            </h2>
+
+            <p class="contact-lead-text">
+              Whether you're looking to discuss open-source projects, hackathons, web development opportunities, or just want to chat about code and technology, my inbox is always open.
+            </p>
+
+            <div class="contact-methods-list">
+              <!-- Method 1: Email -->
+              <div class="contact-item">
+                <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="item-details">
+                  <span class="item-label">DIRECT INBOX</span>
+                  <a href="mailto:arinjain.contact@example.com" class="item-val link-hover" id="emailDisplay">
+                    arinjain.contact@example.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Method 2: GitHub -->
+              <div class="contact-item">
+                <div class="item-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="item-details">
+                  <span class="item-label">SOURCE REPOSITORY</span>
+                  <a href="https://github.com/arinjain" target="_blank" rel="noopener noreferrer" class="item-val link-hover">
+                    github.com/arinjain
+                  </a>
+                </div>
+              </div>
+
+              <!-- Method 3: LinkedIn -->
+              <div class="contact-item">
+                <div class="item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="item-details">
+                  <span class="item-label">PROFESSIONAL NETWORK</span>
+                  <a href="https://linkedin.com/in/arin-jain" target="_blank" rel="noopener noreferrer" class="item-val link-hover">
+                    linkedin.com/in/arin-jain
+                  </a>
+                </div>
+              </div>
+
+              <!-- Method 4: Location -->
+              <div class="contact-item">
+                <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="item-details">
+                  <span class="item-label">CURRENT RESIDENCE</span>
+                  <span class="item-val">Rishihood University • India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resume Download Button (Required Item 14) -->
+            <div class="resume-cta-block">
+              <a href="#" id="downloadResumeBtn" class="btn btn-secondary resume-btn">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>DOWNLOAD RESUME (PDF DOSSIER)</span>
+              </a>
+              <span class="resume-meta">Curriculum Vitae • Updated for 2024–2025</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Vintage Contact Form with Validation -->
+          <div class="contact-form-block">
+            <div class="form-letter-wrapper">
+              <div class="letter-stamp-top">
+                <div class="postage-stamp-vintage">
+                  <span class="stamp-postage">PAR AVION</span>
+                  <span class="stamp-rate">&#8377; 5.00</span>
+                </div>
+              </div>
+
+              <h3 class="form-title">TRANSMIT A MESSAGE</h3>
+              <p class="form-note">
+                <i class="fa-solid fa-circle-info"></i> Validated frontend form with automatic <code>mailto:</code> fallback. (Note: A server backend or Formspree/EmailJS service can be connected for zero-client routing).
+              </p>
+
+              <form id="contactForm" class="vintage-form" novalidate>
+                <!-- Field 1: Name -->
+                <div class="form-group">
+                  <label for="contactName" class="form-label">
+                    <span>NAME:</span>
+                    <span class="req">*</span>
+                  </label>
+                  <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Ada Lovelace" required />
+                  <span class="form-error" id="nameError"></span>
+                </div>
+
+                <!-- Field 2: Email -->
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">
+                    <span>EMAIL ADDRESS:</span>
+                    <span class="req">*</span>
+                  </label>
+                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. ada@domain.com" required />
+                  <span class="form-error" id="emailError"></span>
+                </div>
+
+                <!-- Field 3: Message -->
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">
+                    <span>MESSAGE / INQUIRY:</span>
+                    <span class="req">*</span>
+                  </label>
+                  <textarea id="contactMessage" name="message" rows="5" class="form-textarea" placeholder="Write your dispatch here..." required></textarea>
+                  <div class="textarea-footer">
+                    <span class="form-error" id="messageError"></span>
+                    <span class="char-count" id="charCount">0 characters</span>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary submit-btn" id="submitFormBtn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>TRANSMIT DISPATCH</span>
+                  <span class="btn-arrow">&rarr;</span>
+                </button>
+
+                <!-- Feedback Toast -->
+                <div id="formFeedback" class="form-feedback" aria-live="polite" hidden></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="vintage-footer">
+    <div class="container footer-inner">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">ARIN JAIN<span class="dot">.</span>DEV</div>
+        <p class="footer-tagline">
+          First-Year Computer Science Student • Aspiring Software Developer • Vintage Digital Magazine &amp; Developer Portfolio.
+        </p>
+        <div class="footer-edition">
+          <span>VOLUME 01 • ISSUE 2024–28 • NEW DELHI, INDIA</span>
+        </div>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4 class="footer-heading">NAVIGATION DIRECTORY</h4>
+        <ul class="footer-links-list">
+          <li><a href="#home">01 // Home</a></li>
+          <li><a href="#about">02 // About Me</a></li>
+          <li><a href="#skills">03 // Skills &amp; Tech</a></li>
+          <li><a href="#projects">04 // Projects Gallery</a></li>
+          <li><a href="#achievements">05 // Achievements</a></li>
+          <li><a href="#experience">06 // Experience &amp; Community</a></li>
+          <li><a href="#learning">07 // Learning Journey</a></li>
+          <li><a href="#opensource">08 // Open Source</a></li>
+          <li><a href="#contact">09 // Contact &amp; Dispatch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col meta-col">
+        <h4 class="footer-heading">COLOPHON &amp; INTEGRITY</h4>
+        <p class="colophon-text">
+          Engineered using pure <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>Vanilla JavaScript</strong>. Zero build tools or heavy frameworks. Designed like an editorial journal, vintage scrapbook, and developer console.
+        </p>
+        <div class="social-footer-links">
+          <a href="https://github.com/arinjain" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/arin-jain" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:arinjain.contact@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <div class="copyright-line">
+          &copy; <span id="currentYear">2024</span> Arin Jain. All rights reserved. Crafting code with curiosity.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

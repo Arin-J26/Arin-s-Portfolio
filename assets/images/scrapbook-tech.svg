@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <rect width="500" height="500" fill="#F4EBD8"/>
+  <circle cx="250" cy="250" r="230" fill="none" stroke="#29231D" stroke-width="1.5" stroke-dasharray="6,4"/>
+  
+  <!-- Circuit & Mechanical gears / Vintage blueprint -->
+  <g transform="translate(100, 90)">
+    <!-- Main gear -->
+    <circle cx="150" cy="150" r="90" fill="#E7D9BD" stroke="#29231D" stroke-width="3"/>
+    <circle cx="150" cy="150" r="50" fill="#F4EBD8" stroke="#C65D32" stroke-width="2.5"/>
+    <circle cx="150" cy="150" r="20" fill="#29231D"/>
+    
+    <!-- Cog teeth -->
+    <rect x="142" y="45" width="16" height="25" fill="#29231D"/>
+    <rect x="142" y="230" width="16" height="25" fill="#29231D"/>
+    <rect x="45" y="142" width="25" height="16" fill="#29231D"/>
+    <rect x="230" y="142" width="25" height="16" fill="#29231D"/>
+    <rect x="75" y="75" width="20" height="20" fill="#29231D" transform="rotate(45 85 85)"/>
+    <rect x="205" y="75" width="20" height="20" fill="#29231D" transform="rotate(45 215 85)"/>
+    <rect x="75" y="205" width="20" height="20" fill="#29231D" transform="rotate(45 85 215)"/>
+    <rect x="205" y="205" width="20" height="20" fill="#29231D" transform="rotate(45 215 215)"/>
+  </g>
+
+  <!-- Technical Annotation -->
+  <text x="250" y="380" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#29231D" text-anchor="middle">HARDWARE &amp; LOGIC EXPLORATION</text>
+  <text x="250" y="405" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#5A4E43" text-anchor="middle">"From silicon gates to distributed networks"</text>
+  <line x1="120" y1="420" x2="380" y2="420" stroke="#C65D32" stroke-width="1.5"/>
+</svg>
